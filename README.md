@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Supplement Store Demo
 
-## Getting Started
+This is a trial project implementing a **dual-interface web app** for a supplement store:  
+- A **customer-facing storefront** (browse, filter, cart, checkout)  
+- An **administrative provider portal** (orders, pagination, filters, status updates, details)
 
-First, run the development server:
+The app was built as part of an AI-assisted coding task with a ~2-hour timebox.  
+It uses **Next.js + TypeScript + TailwindCSS + shadcn/ui**, with **dummy in-memory data** (no backend).
 
+---
+
+## 🚀 Features
+
+### Storefront
+- **Homepage**: Carousel of products + FAQ
+- **All Products**: Grid with filters (category, price, bestseller), search, sorting
+- **Product Details**: Dynamic route, product info, add-to-cart
+- **Shopping Cart**: Add/remove items, clear, summary, proceed to checkout
+- **Checkout**: Shipping form + order summary; generates an order in the Provider Portal
+
+### Provider Portal
+- **Orders Page**: Paginated table, search (order ID, product, customer), filters (date, status), bulk status update
+- **Order Details**: Dynamic route, summary, customer info, product list, inline status change
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router, TypeScript)
+- **UI**: TailwindCSS, shadcn/ui
+- **State**: Local in-memory arrays + browser events (no persistence)
+- **Styling**: Global Tailwind config + CSS variables
+
+---
+
+## 📦 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) version **18+**
+- A package manager:
+  - [pnpm](https://pnpm.io/) (recommended)  
+  - or npm / yarn
+
+Check your versions:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+node -v
+pnpm -v
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📥 Clone the Repository
+```bash
+git clone <REPO_URL> supplement-store
+cd supplement-store
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Install & Run
+```bash
+# install deps
+pnpm install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# run dev server
+pnpm dev
+```
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### open in browser
+localhost:3000(http://localhost:3000)
